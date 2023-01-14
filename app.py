@@ -27,27 +27,28 @@ def recommend(movie):
     return recom_movies, recom_movies_data
 
 
-movie_list = pickle.load(open('Movies.pkl', 'rb'))
-similarity = pickle.load(open('similarity.pkl', 'rb'))
+# movie_list = pickle.load(open('Movies.pkl', 'rb'))
+# similarity = pickle.load(open('similarity.pkl', 'rb'))
 
 
-movies = pd.DataFrame(movie_list)
-selected_movie = st.selectbox("Select Movie", movies['title'].values)
+# movies = pd.DataFrame(movie_list)
+# selected_movie = st.selectbox("Select Movie", movies['title'].values)
 
-if st.button('Recommend'):
-    recommended_movies, data = recommend(selected_movie)
-    n = len(recommended_movies)
-    for i in range(n):
-        with st.expander(recommended_movies[i]):
-            st.write(data[i][1])
-            st.image(data[i][0])
-            # st.write(data[i][2])
-            color='Yellow'
-            if data[i][2]> 7:
-                color='Green'
-            elif data[i][2]< 5:
-                color='Red'
-            t = f'<p>Rating: <span style="color:{color}">{data[i][2]}</span></p>'
-            st.markdown(t, unsafe_allow_html=True)
+# if st.button('Recommend'):
+#     recommended_movies, data = recommend(selected_movie)
+#     n = len(recommended_movies)
+#     for i in range(n):
+#         with st.expander(recommended_movies[i]):
+#             st.write(data[i][1])
+#             st.image(data[i][0])
+#             # st.write(data[i][2])
+#             color='Yellow'
+#             if data[i][2]> 7:
+#                 color='Green'
+#             elif data[i][2]< 5:
+#                 color='Red'
+#             t = f'<p>Rating: <span style="color:{color}">{data[i][2]}</span></p>'
+#             st.markdown(t, unsafe_allow_html=True)
+st.write("YO")
 
 #streamlit run app.py
