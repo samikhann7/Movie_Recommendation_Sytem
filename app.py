@@ -27,12 +27,12 @@ def recommend(movie):
     return recom_movies, recom_movies_data
 
 
-# movie_list = pickle.load(open('Movies.pkl', 'rb'))
-# similarity = pickle.load(open('similarity.pkl', 'rb'))
+movie_list = pickle.load(open('Movies.pkl', 'rb'))
+similarity = pickle.load(open('similarity.pkl', 'rb'))
 
 
-# movies = pd.DataFrame(movie_list)
-# selected_movie = st.selectbox("Select Movie", movies['title'].values)
+movies = pd.DataFrame(movie_list)
+selected_movie = st.selectbox("Select Movie", movies['title'].values)
 
 # if st.button('Recommend'):
 #     recommended_movies, data = recommend(selected_movie)
